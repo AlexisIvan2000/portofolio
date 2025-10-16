@@ -1,5 +1,6 @@
 import React from "react";
 import profil from "../assets/profil.png";
+import SkillBar from "../components/SkillBar";
 export default function About() {
   return (
     <section className="about-section">
@@ -18,15 +19,8 @@ export default function About() {
       </div>
       <div className="skills-cta">
         <h2>Mon stack Technique</h2>
-        <ul className="skills-list">
-          <li>Python (Django, Flask, FastAPI, Pandas, NumPy, Matplotlib)</li>
-          <li>Dart(Flutter)</li>          
-          <li>Javascript (React.js, Node.js)</li>
-          <li>HTML/CSS (Bootstrap, Tailwind CSS)</li>
-          <li>Base de données SQL/NoSQL (SQLite, MySQL, MongoDB, Firebase)</li>
-          <li>Architecture RESTful APIs</li>
+        <SkillBar/>
         
-        </ul>
       </div>
     </section>
   );

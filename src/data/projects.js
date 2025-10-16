@@ -16,6 +16,17 @@ export const projects = [
     technologies: ["FastAPI", "React.js", "Pydantic","SQLAlchemy","IA/NLP OpenAI & Spacy"],
     image: "/images/joblexa.png",
     url: "https://github.com/AlexisIvan2000/JobLexa-Analytics"
+    
   },
+
+  {
+    id: 3,
+    title: "Portfolio Website",
+    description:
+    "Mon site portfolio personnel pour présenter mes compétences, projets et expériences.",
+    technologies: ["React.js", "CSS"],
+    image: "/images/portfolio.png",
+    url: "https://github.com/AlexisIvan2000/portofolio"
+  }
   
 ];
