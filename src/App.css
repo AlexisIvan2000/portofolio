@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f8f8f8;
+}
+main {
+    padding-top: 80px; 
+}
+/* Styles du Header */
+header {
+    /* Positionnement et taille */
+    position: fixed; /* Rendre le header fixe en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Hauteur fixe */
+    z-index: 1000; /* Assurer qu'il reste au-dessus des autres éléments */
+
+    /* Couleurs et esthétique */
+    background-color: rgba(39, 76, 119, 1); /* Fond gris foncé/noir, légèrement transparent */
+    box-shadow: 0 4px 12px rgba(15, 143, 218, 0.15); /* Ombre douce */
+    backdrop-filter: blur(9px); /* Effet de flou derrière le header (moderne) */
+
+    /* Flexbox pour l'alignement */
+    display: flex;
+    justify-content: space-between; /* Espacer le logo et les liens */
+    align-items: left;
+    padding: 0 1%;
+}
+/* Logo et Nom */
+.logo-name {
+    display: flex;
+    align-items: left;
+}
+
+.logo-name .logo {
+    /* Ajustez la taille de votre logo.svg ici */
+    height:40px; 
+    width: auto;
+    margin-right: 10px;
+
+}
+
+.logo-name h2 {
+    font-size: 1.5rem;
+    color: hwb(0 100% 0%); /* Texte blanc */
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0; /* Supprimer la marge par défaut du h2 */
+}
+/* Liens de Navigation */
+.nav-links {
+    display: flex;
+    gap: 10px; /* Espace entre les liens */
+   margin-right: 20px; /* Espace à droite */
+}
+
+.nav-links a {
+    /* Style de base des liens */
+    text-decoration: none;
+    color: #cccccc; /* Couleur claire pour le texte des liens */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.2s ease; /* Transition douce */
+    position: relative;
+}
+
+/* Effet au survol (hover) */
+.nav-links a:hover {
+    color: #00bcd4; /* Bleu/Cyan vif pour la marque (à remplacer par VOTRE couleur) */
+    transform: translateY(-2px); /* Léger soulèvement au survol */
+}
+
+/* Ajout d'une ligne d'accentuation (Underline) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #00bcd4; /* Couleur d'accentuation */
+    transform: scaleX(0); /* Cache la ligne par défaut */
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Affiche la ligne au survol */
+}
+
+/* --- Styles pour la Grille des Cartes (Projects.jsx) --- */
+
+.projects-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-section h1 {
+    font-size: 3rem;
+    color: #1C1C1C;
+    margin-bottom: 5px;
+}
+
+.projects-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* --- Conteneur de la Grille (ProjectCard.jsx) --- */
+
+.project-card {
+    /* Utilise CSS Grid pour un affichage en colonnes */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 320px est la taille min. d'une carte */
+    gap: 30px; /* Espace entre les cartes */
+    padding: 20px 0;
+}
+
+/* --- Style de la Carte Individuelle (.card) --- */
+
+.card {
+    /* Style de base de la carte */
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden; /* Assure que l'image ne dépasse pas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Ombre douce par défaut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    /* Effet au survol */
+    transform: translateY(-5px); /* Léger soulèvement */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
+}
+
+/* --- Image du Projet --- */
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+    border-bottom: 1px solid #eee;
+}
+
+/* --- Contenu Texte --- */
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #1C1C1C;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* --- Technologies (Affichage des tags) --- */
+
+.card-technologies {
+    color: #4CAF50; /* Couleur d'accentuation (Vert Python) */
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* --- Lien de Code Source --- */
+
+.card-link {
+    display: inline-block;
+    color: #1C1C1C; /* Gris foncé */
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #1C1C1C;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-link:hover {
+    background-color:rgb(25, 196, 139); /* Vert Python au survol */
+    color: white;
+    border-color: rgb(25, 196, 139);
+}
+
+/* --- Styles pour la Page About.jsx --- */
+
+.about-section {
+    padding: 100px 5% 60px; /* Ajout d'un padding pour l'espace autour du header fixe */
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- Section En-tête (about-header) --- */
+.about-header {
+    display: flex;
+    flex-direction: column; /* Centrer le contenu verticalement pour une meilleure présentation */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+}
+
+.profil-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 5px solid #4CAF50; /* Bordure d'accentuation verte */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.about-header h3 {
+    font-size: 2rem;
+    color: #1C1C1C;
+    margin: 10px 0 5px;
+}
+
+.about-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 10px;
+}
+
+.about-header strong {
+    color: #4CAF50; /* Accentuation sur le rôle */
+}
+
+/* --- Section Compétences (skills-cta) --- */
+
+.skills-cta {
+    padding: 30px 0;
+}
+
+.skills-cta h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1C1C1C;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.skills-cta h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    /* Affichage en grille sur 2 colonnes pour les grands écrans */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.skills-list li {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 15px 25px;
+    border-left: 5px solid #4CAF50; /* Marqueur vertical vert */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.skills-list li:hover {
+    background-color: #eef7ee; /* Très léger changement au survol */
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.1); /* Ombre douce verte */
+}
+
+/* --- Media Queries pour les petits écrans (Mobile) --- */
+@media (max-width: 768px) {
+    .skills-list {
+        /* Passe en une seule colonne sur mobile */
+        grid-template-columns: 1fr; 
+        padding: 0;
+    }
+}
